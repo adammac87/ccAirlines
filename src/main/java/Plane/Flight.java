@@ -16,10 +16,12 @@ public class Flight {
     private String departureAirport;
     private String departureTime;
 
+    private int capacity;
 
 
 
-    public Flight(String flightNumber,String destinationAirport, String departureAirport, String departureTime){
+
+    public Flight(String flightNumber,String destinationAirport, String departureAirport, String departureTime , int capacity){
         this.pilots= new ArrayList<>();
         this.crewMembers = new ArrayList<>();
         this.passengers = new ArrayList<>();
@@ -27,6 +29,7 @@ public class Flight {
         this.destinationAirport = destinationAirport;
         this.departureAirport = departureAirport;
         this.departureTime= departureTime;
+        this.capacity = capacity;
 
 
     }
@@ -65,7 +68,15 @@ public class Flight {
     }
 
     public void addPassenger(Passenger passenger){
-        this.passengers.add(passenger);
+        if (this.countSeats() >0) {
+            this.passengers.add(passenger);
+        }
+    }
+
+
+    public int countSeats(){
+       return (this.capacity - this.getPassengers());
+
     }
 
 }

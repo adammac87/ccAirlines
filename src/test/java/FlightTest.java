@@ -15,6 +15,8 @@ public class FlightTest {
     Flight flight;
     Passenger passenger1;
     Passenger passenger2;
+
+    Passenger passenger3;
     Pilot pilot;
     CrewMember crewMember1;
     CrewMember crewMember2;
@@ -22,12 +24,13 @@ public class FlightTest {
 
     @Before
     public void setUp(){
-    flight = new Flight("123", "Edi","Abr","12:50");
+    flight = new Flight("123", "Edi","Abr","12:50",2);
     pilot = new Pilot("Bob", "Captain", "BRG1");
     crewMember1 = new CrewMember("Louise", "cabinCrew");
     crewMember2 = new CrewMember("Tina", "Head Steward");
     passenger1 = new Passenger("Linda", 1);
     passenger2= new Passenger("Gene", 6);
+    passenger3= new Passenger("Teddy", 5);
 
 
     }
@@ -68,7 +71,18 @@ public class FlightTest {
         assertEquals(1,flight.getCrewMembers());
     }
 
+    @Test
+    public void CanCheckCapacity(){
+        flight.addPassenger(passenger1);
+        assertEquals(1,flight.countSeats());
+    }
 
+    @Test
+    public void CannotBookPassenger(){
+        flight.addPassenger(passenger1);
+        flight.addPassenger(passenger2);
+        flight.addPassenger(passenger3);
+        assertEquals(0,flight.countSeats());
 
-
+    }
 }
