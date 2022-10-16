@@ -24,6 +24,8 @@ public class Pilot extends Person {
         return pilotsLicense;
     }
 
-
+    public String flyPlane(){
+        return "lets fly";
+    }
 }
 

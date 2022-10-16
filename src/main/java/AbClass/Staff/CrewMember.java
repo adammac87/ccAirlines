@@ -18,6 +18,8 @@ public class CrewMember extends Person {
         return rank;
     }
 
-
+    public String relayMessage(){
+        return "message";
+    }
 
 }

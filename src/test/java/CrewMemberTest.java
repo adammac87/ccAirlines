@@ -14,10 +14,13 @@ public class CrewMemberTest {
         crewMember = new CrewMember("Moogle", "Steward");
     }
 
-    
+
     @Test
     public void hasName(){assertEquals("Moogle", crewMember.getName());}
 
     @Test
     public void hasRank(){assertEquals("Steward", crewMember.getRank());}
+
+    @Test
+    public void hasMessage(){assertEquals("message", crewMember.relayMessage());}
 ;}

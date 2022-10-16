@@ -20,6 +20,8 @@ public class PilotTest {
     @Test
     public void hasPilotsLicense(){ assertEquals("ABC1", pilot.getPilotsLicense());}
 
+    @Test
+    public void hasFlyPlane(){ assertEquals("lets fly", pilot.flyPlane());}
 
 
 }
